@@ -1,0 +1,92 @@
+---
+components:
+  schemas: {}
+  messages:
+    Product Model Complete:
+      x-ep-event-id: "rlagy7tk1ge"
+      x-ep-event-version-displayname: "0.1.0"
+      x-ep-event-version-id: "8ii9js9j8eh"
+      x-ep-event-version: "0.1.0"
+      x-ep-event-name: "Product Model Complete"
+      description: ""
+      x-ep-event-state-id: "1"
+      x-ep-event-state-name: "DRAFT"
+    Product Model Created:
+      x-ep-event-id: "1s1c3adi7ie"
+      x-ep-event-version-displayname: "0.1.0"
+      x-ep-event-version-id: "v8pi26ea9lq"
+      x-ep-event-version: "0.1.0"
+      x-ep-event-name: "Product Model Created"
+      description: ""
+      x-ep-event-state-id: "1"
+      x-ep-event-state-name: "DRAFT"
+    Product Model Modified:
+      x-ep-event-id: "ukpw2zejd85"
+      x-ep-event-version-displayname: "0.1.0"
+      x-ep-event-version-id: "4wdv6d3q80q"
+      x-ep-event-version: "0.1.0"
+      x-ep-event-name: "Product Model Modified"
+      description: ""
+      x-ep-event-state-id: "1"
+      x-ep-event-state-name: "DRAFT"
+    Product Model Approved:
+      x-ep-event-id: "i8hkhuguowl"
+      x-ep-event-version-displayname: "0.1.0"
+      x-ep-event-version-id: "x5lgg840074"
+      x-ep-event-version: "0.1.0"
+      x-ep-event-name: "Product Model Approved"
+      description: ""
+      x-ep-event-state-id: "1"
+      x-ep-event-state-name: "DRAFT"
+channels:
+  acmeManufacturing/sc/product/model/approved/v1/cad/{productModelID}:
+    publish:
+      message:
+        $ref: "#/components/messages/Product Model Approved"
+    parameters:
+      productModelID:
+        schema:
+          type: "string"
+        x-ep-parameter-name: "productModelID"
+  acmeManufacturing/sc/product/model/modified/v1/cad/{productModelID}:
+    subscribe:
+      message:
+        $ref: "#/components/messages/Product Model Modified"
+    parameters:
+      productModelID:
+        schema:
+          type: "string"
+        x-ep-parameter-name: "productModelID"
+  acmeManufacturing/sc/product/model/complete/v1/cad/{productModelID}:
+    subscribe:
+      message:
+        $ref: "#/components/messages/Product Model Complete"
+    parameters:
+      productModelID:
+        schema:
+          type: "string"
+        x-ep-parameter-name: "productModelID"
+  acmeManufacturing/sc/product/model/created/v1/cad/{productModelID}:
+    subscribe:
+      message:
+        $ref: "#/components/messages/Product Model Created"
+    parameters:
+      productModelID:
+        schema:
+          type: "string"
+        x-ep-parameter-name: "productModelID"
+asyncapi: "2.5.0"
+info:
+  x-ep-application-version: "0.1.0"
+  x-ep-application-version-id: "di14a2u88bw"
+  x-ep-application-id: "627tejrfici"
+  description: "CAD software is used in the design phase to create digital models\
+    \ of products, which can then be used to create prototypes and test designs before\
+    \ production begins."
+  x-ep-displayname: "0.1.0"
+  x-ep-state-name: "DRAFT"
+  title: "Computer-Aided Design (CAD)"
+  x-ep-application-domain-id: "06jf5fwrcrf"
+  version: "0.1.0"
+  x-ep-state-id: "1"
+  x-ep-application-domain-name: "Acme Manufacturing - Supply Chain Optimisation"
